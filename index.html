@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السيرة الذاتية | حسن بن علي الحبيب</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #0f2c3e; /* كحلي ملكي عميق */
+            --secondary-color: #1b6075; /* أزرق بترولي أنيق */
+            --accent-color: #c5a059; /* ذهبي احترافي هادئ */
+            --bg-gradient: linear-gradient(135deg, #f0f4f8 0%, #e4ecf5 100%);
+            --white: #ffffff;
+            --text-main: #2d3748;
+            --text-muted: #4a5568;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 25px rgba(15, 44, 62, 0.08);
+            --shadow-hover: 0 15px 35px rgba(15, 44, 62, 0.15);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            line-height: 1.8;
+            padding: 2.5rem 1rem;
+            min-height: 100vh;
+        }
+
+        /* حاوية تفاعلية عائمة للتحكم (الطباعة) */
+        .floating-controls {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            z-index: 1000;
+        }
+
+        .btn-print {
+            background-color: var(--accent-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .btn-print:hover {
+            transform: translateY(-3px);
+            background-color: #b08d47;
+            box-shadow: 0 6px 20px rgba(197, 160, 89, 0.6);
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: var(--white);
+            box-shadow: var(--shadow-md);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        /* الترويسة الرئيسية */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #16425b 100%);
+            color: var(--white);
+            padding: 4rem 2.5rem 3rem;
+            text-align: center;
+            position: relative;
+            border-bottom: 6px solid var(--accent-color);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at top right, rgba(255,255,255,0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        header h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+
+        .contact-info span {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 8px 20px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .contact-info span:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .contact-info i {
+            color: var(--accent-color);
+        }
+
+        /* الأقسام والمحتوى */
+        .section {
+            padding: 3rem 2.5rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-right: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            width: 6px;
+            height: 100%;
+            background-color: var(--accent-color);
+            border-radius: 8px;
+        }
+
+        /* الملخص المهني */
+        .summary p {
+            font-size: 1.1rem;
+            text-align: justify;
+            color: var(--text-muted);
+            line-height: 2;
+            background: #f8fafc;
+            padding: 1.8rem;
+            border-radius: 12px;
+            border-right: 4px solid var(--secondary-color);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .summary p:hover {
+            box-shadow: var(--shadow-md);
+            background: var(--white);
+        }
+
+        /* شبكة الكفاءات والبيانات */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 16px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+        }
+
+        .skill-item {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            padding: 14px 18px;
+            border-radius: 12px;
+            font-weight: 600;
+            color: var(--primary-color);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0;
+            width: 4px;
+            background: var(--secondary-color);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .skill-item:hover {
+            color: var(--white);
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .skill-item:hover::before {
+            width: 100%;
+            background: var(--primary-color);
+        }
+
+        /* بطاقات البيانات الشخصية */
+        .info-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            padding: 16px 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: var(--transition);
+            border-right: 4px solid var(--accent-color);
+        }
+
+        .info-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+            border-color: var(--secondary-color);
+        }
+
+        .info-card i {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+        }
+
+        .info-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .info-val {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* الخط الزمني والخبرات */
+        .timeline {
+            position: relative;
+            padding-right: 15px;
+            border-right: 2px dashed var(--border-color);
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #edf2f7;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline .experience-item::before {
+            content: '';
+            position: absolute;
+            right: -23px;
+            top: 25px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 2px var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .experience-item:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--border-color);
+            transform: translateX(-5px);
+        }
+
+        .timeline .experience-item:hover::before {
+            background: var(--primary-color);
+            transform: scale(1.2);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .job-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .job-date {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--white);
+            background: var(--secondary-color);
+            padding: 4px 14px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .company {
+            font-size: 1.05rem;
+            color: var(--accent-color);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .job-details {
+            list-style-type: none;
+        }
+
+        .job-details li {
+            position: relative;
+            padding-right: 22px;
+            margin-bottom: 0.8rem;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .job-details li:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-details li::before {
+            content: '\f0da';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 0;
+            color: var(--accent-color);
+            top: 0;
+            font-size: 1rem;
+            transition: transform 0.2s ease;
+        }
+
+        .experience-item:hover .job-details li::before {
+            transform: translateX(-3px);
+        }
+
+        /* شبكة الدورات التدريبية */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .course-category {
+            background: #fdfdfd;
+            padding: 1.8rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .course-category:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+            background: var(--white);
+        }
+
+        .course-category h4 {
+            color: var(--secondary-color);
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .course-category ul {
+            list-style: none;
+        }
+
+        .course-category li {
+            margin-bottom: 12px;
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            position: relative;
+            padding-right: 18px;
+        }
+
+        .course-category li:last-child {
+            margin-bottom: 0;
+        }
+
+        .course-category li::before {
+            content: '•';
+            position: absolute;
+            right: 0;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            top: -2px;
+        }
+
+        /* قسم التكريمات */
+        .awards-list {
+            background: var(--white);
+            border-radius: 12px;
+        }
+
+        .awards-list li {
+            background: #fefxfc;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid #f0f0f0;
+            margin-bottom: 10px;
+            transition: var(--transition);
+        }
+
+        .awards-list li:hover {
+            border-color: var(--accent-color);
+            background: #fffcf5;
+        }
+
+        .awards-list strong {
+            color: var(--primary-color);
+        }
+
+        /* --- إعدادات الطباعة (PDF) --- */
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+                color: #000;
+            }
+            .floating-controls {
+                display: none !important;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                max-width: 100%;
+            }
+            header {
+                padding: 2.5rem 1rem 1.5rem;
+                background: var(--primary-color) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .skill-item, .experience-item, .course-category, .summary p, .info-card {
+                box-shadow: none !important;
+                transform: none !important;
+                page-break-inside: avoid;
+            }
+            .section {
+                padding: 1.8rem 1rem;
+            }
+            .job-date {
+                color: #fff !important;
+                background-color: var(--secondary-color) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        /* --- التوافق الكامل مع الجوال والشاشات الصغيرة --- */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            header {
+                padding: 2.5rem 1.5rem 2rem;
+            }
+            header h1 {
+                font-size: 1.9rem;
+            }
+            header h2 {
+                font-size: 1.05rem;
+            }
+            .contact-info span {
+                width: 100%;
+                justify-content: center;
+            }
+            .section {
+                padding: 2rem 1.5rem;
+            }
+            .courses-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
+            .experience-item {
+                padding: 1.2rem;
+            }
+            .timeline .experience-item::before {
+                right: -21px;
+            }
+            .floating-controls {
+                bottom: 15px;
+                left: 15px;
+            }
+            .btn-print {
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="floating-controls">
+        <button onclick="window.print()" class="btn-print" title="طباعة أو حفظ كملف PDF">
+            <i class="fa-solid fa-print"></i>
+            طباعة السيرة الذاتية
+        </button>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>حسن بن علي بن محسن الحبيب</h1>
+            <h2>مراقب مالي متقدم | رئيس قسم الرواتب | خبير لجان الرقابة والجرد</h2>
+            <div class="contact-info">
+                <span><i class="fa-solid fa-phone"></i>0504923588</span>
+                <span><i class="fa-solid fa-envelope"></i>haalhabib@mewa.gov.sa</span>
+                <span><i class="fa-solid fa-location-dot"></i>المنطقة الشرقية / الأحساء</span>
+            </div>
+        </header>
+
+        <div class="section">
+            <h3 class="section-title"><i class="fa-solid fa-address-card" style="margin-left: 10px; color: var(--accent-color);"></i>البيانات الشخصية</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fa-regular fa-id-card"></i>
+                    <div class="info-details">
+                        <span class="info-label">رقم الهوية</span>
+                        <span class="info-val">1002573614</span>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <div class="info-details">
+                        <span class="info-label">تاريخ الميلاد</span>
+                        <span class="info-val">01 / 05 / 1390هـ (1970/07/04م)</span>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <i class="fa-solid fa-user-group"></i>
+                    <div class="info-details">
+                        <span class="info-label">الحالة الاجتماعية</span>
+                        <span class="info-val">متزوج</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section summary">
+            <h3 class="section-title"><i class="fa-solid fa-id-card-clip" style="margin-left: 10px; color: var(--accent-color);"></i>الملخص المهني</h3>
+            <p>قائد ومراقب مالي متقدم ، بمسيرة مهنية مُمتده في القطاع الحكومي (وزارة البيئة والمياه والزراعة)، خبير في إدارة النفقات ، حوكمة الرواتب ، وتطبيق أنظمة الرقابة الداخلية ، بسجلاً حافلاً في قيادة لجان الجرد المالي وإبراء الذمم المالية لضمان النزاهة والشفافية ، متمكن من الأنظمة المحاسبية الحكومية ، فحص الاحتيال المالي ، وضوابط الأمن السيبراني ، أسعى باستمرار لتوظيف التحليل المالي لرفع كفاءة الأداء المالي والمؤسسي.</p>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title"><i class="fa-solid fa-graduation-cap" style="margin-left: 10px; color: var(--accent-color);"></i>المؤهل العلمي</h3>
+            <div class="experience-item" style="margin-bottom: 0; border-right: 4px solid var(--accent-color);">
+                <div class="job-header">
+                    <div class="job-title">الدبلوم التجاري</div>
+                    <div class="job-date">تاريخ التخرج: 1412هـ</div>
+                </div>
+                <div class="company" style="margin-bottom: 0;"><i class="fa-solid fa-building-columns"></i> المؤسسة العامة للتدريب التقني TVTC</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title"><i class="fa-solid fa-sliders" style="margin-left: 10px; color: var(--accent-color);"></i>الكفاءات الأساسية</h3>
+            <div class="skills-grid">
+                <div class="skill-item">القيادة الإدارية والإشراف</div>
+                <div class="skill-item">الرقابة الداخلية والمالية</div>
+                <div class="skill-item">إدارة لجان الجرد وبراءة الذمة</div>
+                <div class="skill-item">حوكمة الرواتب والنفقات</div>
+                <div class="skill-item">فحص الاحتيال المالي</div>
+                <div class="skill-item">تدقيق الحسابات الختامية</div>
+                <div class="skill-item">تحليل مشكلات الميزانية</div>
+                <div class="skill-item">الأمن السيبراني وحماية البيانات</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title"><i class="fa-solid fa-briefcase" style="margin-left: 10px; color: var(--accent-color);"></i>الخبرات المهنية والقيادية</h3>
+
+            <div class="timeline">
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">مراقب مالي متقدم</div>
+                        <div class="job-date">1445هـ - حتى الآن</div>
+                    </div>
+                    <div class="company"><i class="fa-regular fa-building"></i> وزارة البيئة والمياه والزراعة - مكتب محافظة الأحساء</div>
+                    <ul class="job-details">
+                        <li>إدارة وتنظيم العمليات المالية والإدارية.</li>
+                        <li>الإشراف المباشر على دقة العمليات المحاسبية وضمان توافقها التام مع اللوائح والأنظمة الحكومية.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">رئيس لجان مالية وجرد (تكليف قيادي)</div>
+                        <div class="job-date">1441هـ - حتى الآن</div>
+                    </div>
+                    <div class="company"><i class="fa-regular fa-building"></i> الإدارة العامة لخدمات المياه بمحافظة الأحساء</div>
+                    <ul class="job-details">
+                        <li>قيادة لجان الجرد المفاجئ والدوري على أعمال المحصلين وأمناء الصناديق لضمان سلامة العمليات.</li>
+                        <li>إصدار تقارير وقرارات براءة الذمة من مباشرة الأموال العامة للدولة بدقة ونزاهة.</li>
+                        <li>الإشراف على تصفية المعاملات المالية العالقة المتعلقة ببرامج خصخصة القطاع.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">محاسب / مدقق حسابات</div>
+                        <div class="job-date">1429هـ - 1441هـ</div>
+                    </div>
+                    <div class="company"><i class="fa-regular fa-building"></i> المديرية العامة للمياه بالمنطقة الشرقية</div>
+                    <ul class="job-details">
+                        <li>تدقيق المستندات المالية ومراجعة القيود المحاسبية المعقدة.</li>
+                        <li>إجراء تسويات العهد المالية وضمان التوافق مع الميزانية المعتمدة.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title"><i class="fa-solid fa-chalkboard-user" style="margin-left: 10px; color: var(--accent-color);"></i>التطوير المهني والدورات المتقدمة</h3>
+            <div class="courses-grid">
+                
+                <div class="course-category">
+                    <h4><i class="fa-solid fa-shield-halved" style="color: var(--accent-color);"></i> الرقابة والأمن المالي</h4>
+                    <ul>
+                        <li>فحص الاحتيال المالي (معهد الإدارة العامة)</li>
+                        <li>ضوابط الأمن السيبراني وحماية البيانات (وزارة البيئة)</li>
+                        <li>نظم الرقابة الداخلية للمؤسسات الحكومية</li>
+                    </ul>
+                </div>
+
+                <div class="course-category">
+                    <h4><i class="fa-solid fa-chart-line" style="color: var(--accent-color);"></i> المحاسبة الحكومية والتحليل</h4>
+                    <ul>
+                        <li>الأعمال المالية في الأجهزة الحكومية المتقدمة</li>
+                        <li>تدقيق الحسابات الختامية والقيود المحاسبية</li>
+                        <li>تحليل ومعالجة مشكلات الميزانية</li>
+                        <li>التحليل المالي المتقدم باستخدام الحاسب الآلي (القاهرة)</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title"><i class="fa-solid fa-award" style="margin-left: 10px; color: var(--accent-color);"></i>التكريمات</h3>
+            <ul class="job-details awards-list">
+                <li><strong>شهادة شكر وتقدير:</strong> لجهود القيادة الفعالة والمميزة خلال رئاسة لجان الجرد وبراءة الذمة (1440هـ).</li>
+                <li><strong>موظف متميز:</strong> تكريم من مصلحة المياه والصرف الصحي بمنطقة الرياض.</li>
+                <li><strong>ميدالية الاستحقاق من الدرجة الثالثة:</strong> بأمر خادم الحرمين الشريفين للتبرع بالدم.</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>
