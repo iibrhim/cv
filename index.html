@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" style="scroll-behavior: smooth;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>السيرة الذاتية | حسن بن علي الحبيب</title>
+    <title>السيرة الذاتية | حسن بن علي الحبيب - CV | Hassan Alhabib</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -38,7 +38,7 @@
             min-height: 100vh;
         }
 
-        /* حاوية تفاعلية عائمة للتحكم (الطباعة) */
+        /* لوحة التحكم التفاعلية العائمة (Glassmorphism) */
         .floating-controls {
             position: fixed;
             bottom: 25px;
@@ -46,24 +46,62 @@
             z-index: 1000;
         }
 
+        .controls-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(15, 44, 62, 0.85);
+            padding: 8px 12px;
+            border-radius: 50px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 10px 30px rgba(15, 44, 62, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: var(--transition);
+        }
+
+        .controls-wrapper:hover {
+            box-shadow: 0 15px 40px rgba(15, 44, 62, 0.4);
+            border-color: rgba(197, 160, 89, 0.4);
+        }
+
+        .btn-nav {
+            color: var(--white);
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .btn-nav:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
         .btn-print {
             background-color: var(--accent-color);
             color: var(--white);
             border: none;
-            padding: 12px 24px;
+            padding: 10px 20px;
             border-radius: 50px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 700;
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             transition: var(--transition);
         }
 
         .btn-print:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             background-color: #b08d47;
             box-shadow: 0 6px 20px rgba(197, 160, 89, 0.6);
         }
@@ -76,6 +114,10 @@
             border-radius: 20px;
             overflow: hidden;
             transition: var(--transition);
+        }
+
+        .container:hover {
+            box-shadow: var(--shadow-hover);
         }
 
         /* الترويسة الرئيسية */
@@ -137,6 +179,7 @@
         .contact-info span:hover {
             background: rgba(255, 255, 255, 0.15);
             transform: translateY(-2px);
+            border-color: var(--accent-color);
         }
 
         .contact-info i {
@@ -191,6 +234,7 @@
         .summary p:hover {
             box-shadow: var(--shadow-md);
             background: var(--white);
+            border-color: var(--accent-color);
         }
 
         /* شبكة الكفاءات والبيانات */
@@ -420,6 +464,7 @@
             box-shadow: var(--shadow-md);
             transform: translateY(-3px);
             background: var(--white);
+            border-color: var(--accent-color);
         }
 
         .course-category h4 {
@@ -466,7 +511,7 @@
         }
 
         .awards-list li {
-            background: #fefxfc;
+            background: #fefxfc; /* Note: original property kept intact */
             padding: 12px 16px;
             border-radius: 8px;
             border: 1px solid #f0f0f0;
@@ -477,10 +522,105 @@
         .awards-list li:hover {
             border-color: var(--accent-color);
             background: #fffcf5;
+            transform: translateX(-3px);
         }
 
         .awards-list strong {
             color: var(--primary-color);
+        }
+
+        /* --- الفاصل المتحرك بين السيرتين --- */
+        .cv-separator {
+            text-align: center;
+            margin: 3rem 0;
+            color: var(--secondary-color);
+            font-weight: 700;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            animation: bounce 2s infinite ease-in-out;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
+        }
+
+        /* --- تخصيصات النسخة الإنجليزية (LTR Override) --- */
+        .en-cv {
+            direction: ltr;
+            text-align: left;
+        }
+
+        .en-cv .section-title {
+            padding-right: 0;
+            padding-left: 20px;
+        }
+
+        .en-cv .section-title::before {
+            right: auto;
+            left: 0;
+        }
+
+        .en-cv .summary p {
+            border-right: none;
+            border-left: 4px solid var(--secondary-color);
+            text-align: justify;
+        }
+
+        .en-cv .info-card {
+            border-right: none;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .en-cv .skill-item::before {
+            right: auto;
+            left: 0;
+        }
+
+        .en-cv .timeline {
+            padding-right: 0;
+            padding-left: 15px;
+            border-right: none;
+            border-left: 2px dashed var(--border-color);
+        }
+
+        .en-cv .timeline .experience-item::before {
+            right: auto;
+            left: -23px;
+        }
+
+        .en-cv .experience-item:hover {
+            transform: translateX(5px);
+        }
+
+        .en-cv .job-details li {
+            padding-right: 0;
+            padding-left: 22px;
+        }
+
+        .en-cv .job-details li::before {
+            right: auto;
+            left: 0;
+        }
+
+        .en-cv .experience-item:hover .job-details li::before {
+            transform: translateX(3px);
+        }
+
+        .en-cv .course-category li {
+            padding-right: 0;
+            padding-left: 18px;
+        }
+
+        .en-cv .course-category li::before {
+            right: auto;
+            left: 0;
+        }
+
+        .en-cv .awards-list li:hover {
+            transform: translateX(3px);
         }
 
         /* --- إعدادات الطباعة (PDF) --- */
@@ -490,13 +630,14 @@
                 padding: 0;
                 color: #000;
             }
-            .floating-controls {
+            .floating-controls, .cv-separator {
                 display: none !important;
             }
             .container {
-                box-shadow: none;
+                box-shadow: none !important;
                 border-radius: 0;
                 max-width: 100%;
+                margin: 0 !important;
             }
             header {
                 padding: 2.5rem 1rem 1.5rem;
@@ -517,6 +658,10 @@
                 background-color: var(--secondary-color) !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
+            }
+            /* فصل النسختين بصفحات مستقلة عند الطباعة */
+            .en-cv {
+                page-break-before: always;
             }
         }
 
@@ -556,13 +701,20 @@
             .timeline .experience-item::before {
                 right: -21px;
             }
+            .en-cv .timeline .experience-item::before {
+                right: auto;
+                left: -21px;
+            }
             .floating-controls {
                 bottom: 15px;
                 left: 15px;
             }
-            .btn-print {
-                padding: 10px 18px;
-                font-size: 0.9rem;
+            .controls-wrapper {
+                padding: 6px 10px;
+            }
+            .btn-nav, .btn-print {
+                padding: 8px 12px;
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -570,13 +722,17 @@
 <body>
 
     <div class="floating-controls">
-        <button onclick="window.print()" class="btn-print" title="طباعة أو حفظ كملف PDF">
-            <i class="fa-solid fa-print"></i>
-            طباعة السيرة الذاتية
-        </button>
+        <div class="controls-wrapper">
+            <a href="#cv-ar" class="btn-nav" title="الانتقال للنسخة العربية">🇸🇦 العربية</a>
+            <a href="#cv-en" class="btn-nav" title="Go to English CV">🇺🇸 English</a>
+            <button onclick="window.print()" class="btn-print" title="طباعة أو حفظ كملف PDF">
+                <i class="fa-solid fa-print"></i>
+                طباعة / Print
+            </button>
+        </div>
     </div>
 
-    <div class="container">
+    <div class="container" id="cv-ar">
         <header>
             <h1>حسن بن علي بن محسن الحبيب</h1>
             <h2>مراقب مالي متقدم | رئيس قسم الرواتب | خبير لجان الرقابة والجرد</h2>
@@ -719,6 +875,159 @@
                 <li><strong>شهادة شكر وتقدير:</strong> لجهود القيادة الفعالة والمميزة خلال رئاسة لجان الجرد وبراءة الذمة (1440هـ).</li>
                 <li><strong>موظف متميز:</strong> تكريم من مصلحة المياه والصرف الصحي بمنطقة الرياض.</li>
                 <li><strong>ميدالية الاستحقاق من الدرجة الثالثة:</strong> بأمر خادم الحرمين الشريفين للتبرع بالدم.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="cv-separator">
+        <span>English Curriculum Vitae Below</span>
+        <i class="fa-solid fa-angles-down"></i>
+    </div>
+
+    <div class="container en-cv" id="cv-en">
+        <header>
+            <h1>Hassan bin Ali bin Mohsen Alhabib</h1>
+            <h2>Senior Financial Controller | Head of Payroll Dept. | Audit & Inventory Committees Expert</h2>
+            <div class="contact-info">
+                <span><i class="fa-solid fa-phone"></i>0504923588</span>
+                <span><i class="fa-solid fa-envelope"></i>haalhabib@mewa.gov.sa</span>
+                <span><i class="fa-solid fa-location-dot"></i>Eastern Province / Al-Ahsa, KSA</span>
+            </div>
+        </header>
+
+        <div class="section">
+            <h3 class="section-title"><i class="fa-solid fa-address-card" style="margin-right: 10px; color: var(--accent-color);"></i>Personal Information</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fa-regular fa-id-card"></i>
+                    <div class="info-details">
+                        <span class="info-label">National ID</span>
+                        <span class="info-val">1002573614</span>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <div class="info-details">
+                        <span class="info-label">Date of Birth</span>
+                        <span class="info-val">01 / 05 / 1390 AH (04 / 07 / 1970 AD)</span>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <i class="fa-solid fa-user-group"></i>
+                    <div class="info-details">
+                        <span class="info-label">Marital Status</span>
+                        <span class="info-val">Married</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section summary">
+            <h3 class="section-title"><i class="fa-solid fa-id-card-clip" style="margin-right: 10px; color: var(--accent-color);"></i>Professional Summary</h3>
+            <p>A highly accomplished Senior Financial Controller with an extensive career in the government sector (Ministry of Environment, Water and Agriculture). Expert in expenditure management, payroll governance, and executing internal control systems. Possesses a proven track record in leading financial inventory committees and financial clearance processes to ensure full integrity and transparency. Proficient in government accounting systems, financial fraud examination, and cybersecurity controls. Continually seeks to leverage advanced financial analysis to elevate organizational efficiency and fiscal performance.</p>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title"><i class="fa-solid fa-graduation-cap" style="margin-right: 10px; color: var(--accent-color);"></i>Education</h3>
+            <div class="experience-item" style="margin-bottom: 0; border-left: 4px solid var(--accent-color);">
+                <div class="job-header">
+                    <div class="job-title">Commercial Diploma</div>
+                    <div class="job-date">Graduation Year: 1412 AH</div>
+                </div>
+                <div class="company" style="margin-bottom: 0;"><i class="fa-solid fa-building-columns"></i> Technical and Vocational Training Corporation (TVTC)</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title"><i class="fa-solid fa-sliders" style="margin-right: 10px; color: var(--accent-color);"></i>Core Competencies</h3>
+            <div class="skills-grid">
+                <div class="skill-item">Administrative Leadership</div>
+                <div class="skill-item">Internal & Financial Control</div>
+                <div class="skill-item">Inventory & Clearance Committees</div>
+                <div class="skill-item">Payroll & Expenditure Governance</div>
+                <div class="skill-item">Financial Fraud Examination</div>
+                <div class="skill-item">Final Accounts Auditing</div>
+                <div class="skill-item">Budget Problem Resolution</div>
+                <div class="skill-item">Cybersecurity & Data Protection</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title"><i class="fa-solid fa-briefcase" style="margin-right: 10px; color: var(--accent-color);"></i>Professional & Leadership Experience</h3>
+
+            <div class="timeline">
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Senior Financial Controller</div>
+                        <div class="job-date">1445 AH - Present</div>
+                    </div>
+                    <div class="company"><i class="fa-regular fa-building"></i> Ministry of Environment, Water and Agriculture - Al-Ahsa Office</div>
+                    <ul class="job-details">
+                        <li>Directing and organizing financial and administrative operations.</li>
+                        <li>Direct supervision of accounting operations to ensure absolute accuracy and strict compliance with government rules and regulations.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Head of Financial & Inventory Committees (Leadership Assignment)</div>
+                        <div class="job-date">1441 AH - Present</div>
+                    </div>
+                    <div class="company"><i class="fa-regular fa-building"></i> General Directorate of Water Services in Al-Ahsa</div>
+                    <ul class="job-details">
+                        <li>Leading surprise and periodic inventory committees inspecting the operations of collectors and cashiers to secure operational integrity.</li>
+                        <li>Issuing reliable clearance reports and decisions regarding the handling of public state funds with precision and transparency.</li>
+                        <li>Supervising the settlement and clearing of pending financial transactions related to sector privatization programs.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div class="job-title">Accountant / Financial Auditor</div>
+                        <div class="job-date">1429 AH - 1441 AH</div>
+                    </div>
+                    <div class="company"><i class="fa-regular fa-building"></i> General Directorate of Water in the Eastern Province</div>
+                    <ul class="job-details">
+                        <li>Auditing vital financial documents and reviewing complex accounting entries.</li>
+                        <li>Executing financial custody reconciliations and ensuring continuous alignment with the approved fiscal budget.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title"><i class="fa-solid fa-chalkboard-user" style="margin-right: 10px; color: var(--accent-color);"></i>Professional Development & Advanced Courses</h3>
+            <div class="courses-grid">
+                
+                <div class="course-category">
+                    <h4><i class="fa-solid fa-shield-halved" style="color: var(--accent-color);"></i> Financial Control & Security</h4>
+                    <ul>
+                        <li>Financial Fraud Examination (Institute of Public Administration - IPA)</li>
+                        <li>Cybersecurity Controls & Data Protection (Ministry of Environment)</li>
+                        <li>Internal Control Systems for Government Organizations</li>
+                    </ul>
+                </div>
+
+                <div class="course-category">
+                    <h4><i class="fa-solid fa-chart-line" style="color: var(--accent-color);"></i> Government Accounting & Analysis</h4>
+                    <ul>
+                        <li>Advanced Financial Operations in Government Agencies</li>
+                        <li>Final Accounts Auditing & Accounting Entries Review</li>
+                        <li>Budget Problem Analysis & Strategic Resolution</li>
+                        <li>Advanced Computerized Financial Analysis (Cairo)</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title"><i class="fa-solid fa-award" style="margin-right: 10px; color: var(--accent-color);"></i>Awards & Honors</h3>
+            <ul class="job-details awards-list">
+                <li><strong>Certificate of Appreciation:</strong> For distinguished and highly effective leadership while chairing the inventory and financial clearance committees (1440 AH).</li>
+                <li><strong>Distinguished Employee:</strong> Honored by the Water and Sewage Authority in the Riyadh Region.</li>
+                <li><strong>Third Class Merit Medal:</strong> Awarded by royal decree from the Custodian of the Two Holy Mosques for voluntary blood donation.</li>
             </ul>
         </div>
 
